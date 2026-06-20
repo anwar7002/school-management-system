@@ -1,0 +1,28 @@
+{
+  "name": "school-management-system",
+  "version": "1.0.0",
+  "description": "Comprehensive School Management System with Monorepo Architecture",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm -r --parallel run dev",
+    "build": "pnpm -r --parallel run build",
+    "lint": "pnpm -r --parallel run lint",
+    "type-check": "pnpm -r --parallel run type-check",
+    "test": "pnpm -r --parallel run test",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "clean": "pnpm -r --parallel run clean && rm -rf node_modules",
+    "db:generate": "cd packages/db && pnpm drizzle-kit generate:pg",
+    "db:migrate": "cd packages/db && pnpm drizzle-kit migrate:pg",
+    "db:studio": "cd packages/db && pnpm drizzle-kit studio"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
